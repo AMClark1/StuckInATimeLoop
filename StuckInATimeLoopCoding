@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace KattisProblem
+{
+    public partial class TimeLoopForm : Form
+    {
+        public TimeLoopForm()
+        {
+            InitializeComponent();
+        }
+
+        private void SubmitButton_Click(object sender, EventArgs e)
+        {
+            const int START_INPUT = 1;
+            int END_INPUT = int.Parse(UserInputTextBox.Text);
+            int Number;
+            OutputListBox.Items.Clear();
+            for (Number = START_INPUT; Number <= END_INPUT; Number++)
+            {
+                OutputListBox.Items.Add(Number + " Abracadabra");
+            }
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
